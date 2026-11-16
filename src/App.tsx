@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessageSquare, Plus, FileText, Check, ArrowUpRight } from 'lucide-react';
+import { MessageSquare, Plus, FileText, Check, ArrowUpRight, Shield, Clock, MapPin, DollarSign, Briefcase } from 'lucide-react';
 
 export default function App() {
   const [fileName, setFileName] = useState<string | null>(null);
@@ -32,50 +32,52 @@ export default function App() {
     <div className="min-h-screen bg-white text-black font-sans antialiased selection:bg-black selection:text-white">
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-200">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-neutral-200">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="font-mono text-xs uppercase tracking-widest font-semibold">Neutorium</div>
+          <div className="flex items-center space-x-2">
+            <span className="font-mono text-xs uppercase tracking-widest font-bold">Neutorium</span>
+          </div>
           <a 
             href="#apply" 
-            className="text-xs uppercase tracking-wider font-mono bg-black text-white hover:bg-neutral-800 px-4 py-2 transition-colors inline-flex items-center space-x-1"
+            className="text-xs uppercase tracking-wider font-mono bg-black text-white hover:bg-neutral-800 px-4 py-2 transition-colors inline-flex items-center space-x-1.5"
           >
-            <span>Apply Now</span>
+            <span>Apply via WhatsApp</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
       </header>
 
-      {/* Main Document Container */}
+      {/* Main Container */}
       <main className="max-w-4xl mx-auto px-6 py-16 md:py-24 space-y-20">
 
-        {/* Title & Metadata */}
+        {/* Hero / Title Section */}
         <div className="space-y-6 border-b border-neutral-200 pb-16">
-          <div className="font-mono text-xs uppercase tracking-widest text-neutral-500">
-            Official Job Circular • Neutorium
+          <div className="inline-flex items-center space-x-2 border border-neutral-300 px-3 py-1 font-mono text-xs uppercase tracking-widest text-neutral-600">
+            <span>Official Job Circular</span>
           </div>
           
           <h1 className="text-3xl md:text-5xl font-normal tracking-tight leading-[1.15]">
-            Business Development & Sales Executive
+            Elite Business Development & Sales Executive
           </h1>
 
           <p className="text-base text-neutral-600 max-w-2xl leading-relaxed">
             Full-time opportunity after successful evaluation. Remote coordination + Field Sales + Business Networking across Dhaka, Rajshahi, Sylhet and Chattogram, Bangladesh.
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 font-mono text-xs">
-            <div className="border border-neutral-200 p-3.5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 font-mono text-xs">
+            <div className="border border-neutral-200 p-4 bg-neutral-50/50">
               <span className="text-neutral-400 block mb-1">POSITION</span>
               <span className="font-semibold text-black">Full-Time</span>
             </div>
-            <div className="border border-neutral-200 p-3.5">
+            <div className="border border-neutral-200 p-4 bg-neutral-50/50">
               <span className="text-neutral-400 block mb-1">WORK MODE</span>
               <span className="font-semibold text-black">Hybrid / Field</span>
             </div>
-            <div className="border border-neutral-200 p-3.5">
+            <div className="border border-neutral-200 p-4 bg-neutral-50/50">
               <span className="text-neutral-400 block mb-1">BASE SALARY</span>
               <span className="font-semibold text-black">৳20k–৳25k / mo</span>
             </div>
-            <div className="border border-neutral-200 p-3.5">
+            <div className="border border-neutral-200 p-4 bg-neutral-50/50">
               <span className="text-neutral-400 block mb-1">COMMISSION</span>
               <span className="font-semibold text-black">5% Per Deal</span>
             </div>
@@ -128,9 +130,9 @@ export default function App() {
             <p>
               Neutorium is looking for commercially minded, sales-oriented and professionally capable individuals who can identify business opportunities, connect with business owners and decision-makers, develop valuable client relationships and convert qualified prospects into paying clients.
             </p>
-            <p className="font-medium text-black border-l-2 border-black pl-4 py-1">
+            <div className="border-l-2 border-black pl-4 py-1.5 font-medium text-black bg-neutral-50">
               This is not a desk-only sales position.
-            </p>
+            </div>
             <p>
               The role strongly focuses on field sales, direct business communication, relationship development and professional networking, supported by remote prospect research, cold calling, online outreach and follow-up activities.
             </p>
@@ -155,11 +157,11 @@ export default function App() {
                 { step: "06", title: "Negotiation & Closing", desc: "Discuss service agreements, handle objections, negotiate appropriate terms and close qualified opportunities." },
                 { step: "07", title: "Client Handover & Relationship Management", desc: "Coordinate with the internal team to ensure a proper handover and maintain long-term professional relationships." }
               ].map((item, idx) => (
-                <div key={idx} className="border border-neutral-200 p-4 flex items-start space-x-4">
-                  <span className="font-mono text-xs text-neutral-400 font-bold">{item.step}</span>
+                <div key={idx} className="border border-neutral-200 p-4 flex items-start space-x-4 bg-white hover:border-black transition-colors">
+                  <span className="font-mono text-xs text-neutral-400 font-bold pt-0.5">{item.step}</span>
                   <div>
                     <div className="font-medium text-black text-sm">{item.title}</div>
-                    <div className="text-xs text-neutral-600 mt-0.5">{item.desc}</div>
+                    <div className="text-xs text-neutral-600 mt-1 leading-relaxed">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -170,7 +172,8 @@ export default function App() {
         {/* Section 4: Key Responsibilities */}
         <section className="space-y-4 pt-8 border-t border-neutral-200">
           <h2 className="font-mono text-xs uppercase tracking-widest text-neutral-500">4. Key Responsibilities</h2>
-          <div className="space-y-6 text-sm text-neutral-800 leading-relaxed">
+          <div className="space-y-4 text-sm text-neutral-800 leading-relaxed">
+            
             <div className="border border-neutral-200 p-6 space-y-3">
               <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-500 font-semibold">Business Development & Prospecting</h3>
               <ul className="list-disc list-inside space-y-1.5 text-neutral-700 pl-2">
@@ -210,6 +213,7 @@ export default function App() {
                 <li>Coordinate with the internal team throughout the sales process.</li>
               </ul>
             </div>
+
           </div>
         </section>
 
@@ -256,34 +260,36 @@ export default function App() {
         <section className="space-y-4 pt-8 border-t border-neutral-200">
           <h2 className="font-mono text-xs uppercase tracking-widest text-neutral-500">6. Salary, Commission & Benefits</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div className="border border-neutral-200 p-6 space-y-2">
+            
+            <div className="border border-neutral-200 p-6 space-y-2 bg-white">
               <div className="font-mono text-xs text-neutral-400 uppercase">Monthly Salary</div>
               <div className="text-lg font-semibold">৳20,000–৳25,000</div>
-              <p className="text-xs text-neutral-600">Standard range. Exceptional candidates with proven records may negotiate ৳30,000+.</p>
+              <p className="text-xs text-neutral-600 leading-relaxed">Standard range. Exceptional candidates with proven records may negotiate ৳30,000+.</p>
             </div>
 
-            <div className="border border-neutral-200 p-6 space-y-2">
+            <div className="border border-neutral-200 p-6 space-y-2 bg-white">
               <div className="font-mono text-xs text-neutral-400 uppercase">KPI Completion Bonus</div>
               <div className="text-lg font-semibold">৳5,000 Bonus</div>
-              <p className="text-xs text-neutral-600">Provided upon successful completion of the specified performance KPI.</p>
+              <p className="text-xs text-neutral-600 leading-relaxed">Provided upon successful completion of the specified performance KPI.</p>
             </div>
 
-            <div className="border border-neutral-200 p-6 space-y-2">
+            <div className="border border-neutral-200 p-6 space-y-2 bg-white">
               <div className="font-mono text-xs text-neutral-400 uppercase">Sales Commission</div>
               <div className="text-lg font-semibold">5% Commission</div>
-              <p className="text-xs text-neutral-600">On each successfully closed deal, payable after contract and advance payment.</p>
+              <p className="text-xs text-neutral-600 leading-relaxed">On each successfully closed deal, payable after contract and advance payment.</p>
             </div>
 
-            <div className="border border-neutral-200 p-6 space-y-2">
+            <div className="border border-neutral-200 p-6 space-y-2 bg-white">
               <div className="font-mono text-xs text-neutral-400 uppercase">Travel Support</div>
               <div className="text-lg font-semibold">Allowance / Reimbursement</div>
-              <p className="text-xs text-neutral-600">Provided for approved work-related travel and field visits.</p>
+              <p className="text-xs text-neutral-600 leading-relaxed">Provided for approved work-related travel and field visits.</p>
             </div>
+
           </div>
         </section>
 
         {/* Sections 7–13: Logistics & Profile */}
-        <section className="space-y-6 pt-8 border-t border-neutral-200">
+        <section className="space-y-4 pt-8 border-t border-neutral-200">
           <h2 className="font-mono text-xs uppercase tracking-widest text-neutral-500">7–13. Location, Shifts & Candidate Profile</h2>
           
           <div className="space-y-4 text-sm text-neutral-800 leading-relaxed">
